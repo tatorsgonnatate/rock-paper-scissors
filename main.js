@@ -7,37 +7,54 @@ function getComputerChoice() {
     return (choice[(Math.floor(Math.random() * choice.length))]);
 }
 
+//Buuton clicked with choice and playing round
+let selectedValue = '';
+let result = ''
+const buttons = document.querySelectorAll('.game-button');
+  
+buttons.forEach(function (i){
+   i.addEventListener('click', function() {
+       selectedValue = this.value;
+       playRound()
+   });
+});
+
+//Give player Round Winner
+//result = document.getElementById('round-winner').innerHTML
+
+
+
 // Play round and return who wins
 function playRound(playerSelection, computerSelection){
-    let value = prompt('Please enter your choice', '');
-    playerSelection = value.toLowerCase();
+    playerSelection = selectedValue;
     computerSelection = getComputerChoice();
-    console.log(playerSelection);
-    console.log(computerSelection);
+    
+
         if (playerSelection === computerSelection){
-           return 'Tie! No winner this round.'
+           return result = 'Tie! No winner this round.'
         }else if((playerSelection === 'rock' && computerSelection === 'paper')
         ||(playerSelection === 'paper' && computerSelection === 'scissors')
         ||(playerSelection === 'scissors' && computerSelection === 'rock')){
             if (computerScore <= 5) {
                 computerScore++;
             }
-            return `You lose ${playerSelection} beats ${computerSelection}`
+            return result = `You lose ${playerSelection} beats ${computerSelection}`
         }else if((playerSelection === 'paper' && computerSelection === 'rock')
         ||(playerSelection === 'scissors' && computerSelection === 'paper')
         ||(playerSelection === 'rock' && computerSelection === 'scissors')){
             if (playerScore <=5) {
                 playerScore++;
             }
-            return `You win ${playerSelection} beats ${computerSelection}`  
+            return result =`You win ${playerSelection} beats ${computerSelection}`  
         }else {
-            return 'That is not a valid selection'
+            return result = 'That is not a valid selection'
         }
+        
     }
-
+    
 //Play 5 rounds of rps and keep score and give winner at the end of the game
 
-let n = ''
+/*let n = ''
 const game = () => {
     let i =1;
 
@@ -46,12 +63,11 @@ const game = () => {
         i++
     }
     if (playerScore > computerScore) {
-        return `You beat the compter by ${playerScore - computerScore}. Great Job!`
+        return `You beat the computer by ${playerScore - computerScore}. Great Job!`
     }else if (computerScore > playerScore) {
         return `The Computer beat you by ${computerScore - playerScore}. The machines are taking over!`
     }else {
         return "You both lose, life ain't fair and the world is mean!" 
     }
 }
-
-console.log(game());
+*/
