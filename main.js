@@ -52,17 +52,18 @@ function playRound() {
     }
 
     // Update the score display
-    document.getElementById('score').innerText = `Your Score: ${playerScore} Computer Score: ${computerScore}`;
+    document.getElementById('score').innerHTML = `Your Score: ${playerScore} <br> Computer Score: ${computerScore}`;
 
+    // Check and display the final winner
+    if (playerScore === 5) {
+        gameResult = document.getElementById('game-winner').textContent = `You beat the computer by ${playerScore - computerScore}. Humanity still has a chance!`;
+    } else if (computerScore === 5) {
+        gameResult = document.getElementById('game-winner').textContent = `The Computer beat you by ${computerScore - playerScore}. The machines are taking over!`;
+    }
     // Check if the game is over
     if (playerScore === 5 || computerScore === 5) {
         gameResult = document.getElementById('game-over').textContent = 'Play Again?';
     }
 
-    // Check and display the final winner
-    if (playerScore === 5) {
-        gameResult = document.getElementById('game-winner').textContent = `You beat the computer by ${playerScore - computerScore}. Great Job!`;
-    } else if (computerScore === 5) {
-        gameResult = document.getElementById('game-winner').textContent = `The Computer beat you by ${computerScore - playerScore}. The machines are taking over!`;
-    }
+    
 }

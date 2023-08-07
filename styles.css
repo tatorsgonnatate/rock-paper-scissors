@@ -1,3 +1,66 @@
-h1 {
-    color: pink;
+body {
+    background-image: url(images/background.jpg);
+    background-repeat: none;
+    background-size: cover;
+    
 }
+
+body, .game-button {
+    color: whitesmoke;
+    text-shadow: 4px 4px 3px black;
+    font-family: 'Cabin', sans-serif;
+}
+
+#header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#header>h1 {
+    font-size: 60px;
+}
+
+#header>h3,
+#round-winner,
+#game-winner {
+    font-size: 30px;
+}
+#player-choice {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: transparent;
+}
+
+.game-button {
+  border: none;
+  background-color: transparent;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.game-button>img {
+    max-width: 350px;
+    max-height: auto;
+    aspect-ratio: 3/3;
+    object-fit: contain;
+    transition: .2s;
+}
+
+img:hover {
+    transform: scale(1.2);
+}
+#score{
+  font-size: 75px;
+  text-align: center;
+  color: yellow;
+}
+
+/*#game-over{
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: blue;
+    padding: 15px 50px;
+    border-radius: 10px;
+    text-shadow: none;
+}*/
