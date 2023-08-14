@@ -61,9 +61,11 @@ function playRound() {
         gameResult = document.getElementById('game-winner').textContent = `The Computer beat you by ${computerScore - playerScore}. The machines are taking over!`;
     }
     // Check if the game is over
-    if (playerScore === 5 || computerScore === 5) {
+    /*if (playerScore === 5 || computerScore === 5) {
         gameResult = document.getElementById('game-over').textContent = 'Play Again?';
+    }*/
+    let modal = document.querySelector(".modal")
+    if (playerScore ===5 || computerScore ===5) {
+        modal.classList.toggle("show-modal")
     }
-
-    
 }

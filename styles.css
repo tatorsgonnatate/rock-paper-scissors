@@ -5,8 +5,14 @@ body {
     
 }
 
-body, .game-button {
+body, 
+.game-button,
+#game-over>a {
     color: whitesmoke;
+}
+
+body, .game-button {
+   
     text-shadow: 4px 4px 3px black;
     font-family: 'Cabin', sans-serif;
 }
@@ -56,11 +62,54 @@ img:hover {
   color: yellow;
 }
 
-/*#game-over{
-    text-decoration: none;
-    color: whitesmoke;
-    background-color: blue;
-    padding: 15px 50px;
-    border-radius: 10px;
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 4rem 6rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    color: black;
     text-shadow: none;
-}*/
+    font-weight: 700;
+
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    justify-content: center;
+}
+
+#game-over {
+    text-decoration: none;
+    background-color: blue;
+    border: none;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 10px 0px; 
+    
+}
+
+#game-over>a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 0px 120px;
+}

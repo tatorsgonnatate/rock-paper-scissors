@@ -16,7 +16,6 @@
     <h1>Can you beat the machine in Rock,Paper, Scissors?</h1>
     <h3>Make your selection below and see!</h3>
     <div id="round-winner"></div>
-    <div id="game-winner"></div>
   </div>
   <div id="player-choice">
     <button class = "game-button" value = "rock">
@@ -34,10 +33,14 @@
         <br>Scissors
     </button> 
   </div>
+  <div id="score"></div>
 
-    <div id="round-winner"></div>
-    <div id="score"></div>
-    <div><a id="game-over" href = "index.html"></a></div>
-    <script src="main.js"></script>
+  <div class="modal">
+    <div class="modal-content">
+      <div id="game-winner"></div>
+      <button id="game-over"><a href = "index.html">Play Again?</a></button>
+    </div>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>
